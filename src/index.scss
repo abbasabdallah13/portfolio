@@ -1,0 +1,278 @@
+@font-face {
+  font-family: FredokaOne;
+  src: url("./fonts/FredokaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+:root {
+  --primary-color: #353535;
+  --blue-color: #00a0d2;
+  --gray-color: #f4f4f4;
+}
+* {
+  margin: 0;
+}
+html {
+  font-size: calc(0.2em + 1vw);
+}
+section {
+  height: 100vh;
+}
+
+.navbar {
+  padding: 15px 5px 15px 15px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-links {
+  position: absolute;
+  right: 1rem;
+  transition: 1s;
+  ul {
+    margin-right: 35px;
+    transition: 1s;
+
+    li {
+      display: inline-block;
+      margin-left: 3.5rem;
+      font-family: Inter;
+      text-transform: uppercase;
+      a {
+        text-decoration: none;
+        color: #353535;
+      }
+    }
+  }
+}
+
+.coded-navlink,
+.nav-links li:hover {
+  position: relative;
+  a {
+    text-decoration: line-through !important;
+  }
+}
+.coded-navlink:before,
+.nav-links li:hover::before {
+  content: "<";
+  left: -15px;
+  position: absolute;
+}
+.coded-navlink::after,
+.nav-links li:hover::after {
+  content: "/>";
+  margin-left: 5px;
+  position: absolute;
+}
+
+.nav-links a:focus {
+  color: var(--gray-color) !important;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.c {
+  position: absolute;
+  left: 150px;
+  top: 1px;
+
+  img {
+    width: 37px;
+    height: 38px;
+  }
+}
+
+.a img {
+  width: 27px;
+  height: 38px;
+}
+.b {
+  font-size: 18px;
+  font-family: FredokaOne;
+  position: relative;
+  bottom: 2px;
+}
+
+@keyframes logo {
+  0% {
+    left: 10rem;
+  }
+  70% {
+    left: 0px;
+  }
+  100% {
+    left: 2rem;
+  }
+}
+
+@keyframes logo-reverse {
+  0% {
+    left: 20px;
+  }
+
+  100% {
+    left: 150px;
+  }
+}
+
+@keyframes navlinks-animation {
+  0% {
+    right: 1rem;
+  }
+  50% {
+    right: 32rem;
+  }
+  70% {
+    right: 28rem;
+  }
+  100% {
+    right: 30rem;
+  }
+}
+@keyframes navlinks-reverse {
+  0% {
+    right: 30rem;
+  }
+  100% {
+    right: 1rem;
+  }
+}
+
+.download-resume {
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  height: 30px;
+  display: none;
+  position: absolute;
+  right: 45px;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Inter;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 5px;
+  cursor: pointer;
+  &:hover {
+    color: var(--gray-color);
+    background-color: var(--primary-color);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20rem;
+  height: 100vh;
+  background-color: #fff5cf;
+  animation: overlay 0.6s forwards;
+  box-shadow: -1px 0px 0px 0px #a8ac8f;
+  
+  
+  li{
+    text-transform: uppercase;     
+    font-family: Inter;
+    margin-top: 4rem;
+    font-size: 1.5rem; 
+    list-style-type:none;
+    a{
+      text-decoration: none;
+      color: var(--primary-color);
+    }
+  }
+
+}
+
+@keyframes overlay {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 20rem;
+  }
+}
+
+@keyframes close-overlay {
+  0% {
+    width: 20rem;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+.burgermenu{
+  transition: 0.5s;
+}
+
+@keyframes burgermenu-animation{
+  0%{
+    right: 5rem;
+  }
+  100%{
+    right: 21rem;
+  }
+}
+
+@keyframes burgermenu-close-animation {
+  0%{
+    right: 21rem;
+  }
+  100%{
+    right: 5rem;
+  }
+}
+// navbar responsive
+@media screen and (max-width: 1024px) {
+  
+  .c {  
+    position: unset;
+    img {
+      width: 3rem;
+      max-width: 37px;
+      height: 3rem;
+      max-height: 38px;
+    }
+  }
+  
+  .a img {
+    width: 2.5rem;
+    max-width: 27px;
+    height: 3rem;
+    max-height: 38px;
+  }
+  .b {
+    font-size: min(2rem, 18px);
+    bottom: 2px;
+  }
+
+
+  .nav-links {
+    display: none;
+  }
+  #burgermenu{
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-links {
+    display: block;
+  }
+  #burgermenu{
+    display: none;
+  }
+
+}
