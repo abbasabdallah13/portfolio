@@ -12,13 +12,17 @@ const Navbar = () => {
 
   const toggleSidebar = () => {
     let burgermenu = document.getElementById("burgermenu");
+    let about = document.getElementById('about');
     if(!openOverlay){
-      burgermenu.style.animation = 'burgermenu-animation 0.5s forwards'
+      burgermenu.style.animation = 'burgermenu-animation 0.5s forwards';
+      // about.style.animation='move-about 0.5s forwards';
         setOpenOverlay(true);
 }else{
   let overlay = document.getElementsByClassName("overlay")[0];
   burgermenu.style.animation = 'burgermenu-close-animation 0.5s forwards';
   overlay.style.animation = "close-overlay 0.5s forwards ";
+  // about.style.animation='close-about 0.5s forwards';
+
   setTimeout(() => {
     setOpenOverlay(false);
   }, 500);
@@ -30,27 +34,34 @@ const Navbar = () => {
   useEffect(() => {
     let navbar = document.getElementsByClassName("navbar")[0];
     let children = document.getElementsByClassName("child");
+    let logoContainer = document.getElementsByClassName('logo-container')[0];
     let navlinks = document.getElementsByClassName("nav-links")[0];
     let resumeBtn = document.getElementsByClassName("download-resume")[0];
     let overlay = document.getElementsByClassName("overlay")[0];
     let closeOverlay = document.getElementById("closeOverlay");
 
+    if (window.scrollY === 0 && window.innerWidth >=1024) {
+      logoContainer.style.display='none';
+      navlinks.style.marginTop='24px';
+
+    
+    }
     document.addEventListener("scroll", () => {
       if (window.scrollY === 0) {
-        children[1].style.fontSize = "18px";
-        children[1].style.transition = "1s";
-        children[2].style.animation = "logo-reverse 1s forwards";
+       if(window.innerWidth >= 1024){
+        navlinks.style.marginTop='24px';
+        logoContainer.style.display='none';
+       }
         navbar.style.backgroundColor = "unset";
         navbar.style.justifyContent = "space-between";
-        navlinks.style.animation = "navlinks-reverse 1s forwards";
         resumeBtn.style.display = "none";
       } else {
+        navlinks.style.marginTop='unset';
         children[1].style.fontSize = "0px";
-        children[1].style.transition = "0.5s";
         children[2].style.animation = "logo 1s forwards";
+        logoContainer.style.display='flex';
         navbar.style.backgroundColor = "white";
         navbar.style.justifyContent = "unset";
-        navlinks.style.animation = "navlinks-animation 1s forwards";
        if(window.innerWidth >= 1024){
         resumeBtn.style.display = "flex"
        }
