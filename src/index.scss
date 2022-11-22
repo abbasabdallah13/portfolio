@@ -15,6 +15,8 @@
 }
 * {
   margin: 0;
+  scroll-behavior: smooth;
+
 }
 html {
   font-size: calc(0.2em + 1vw);
@@ -24,29 +26,48 @@ section {
 }
 
 .navbar {
-  padding: 15px 5px 15px 15px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   position: fixed;
+  z-index: 3;
   width: 100%;
+  top: 1.3rem;
+}
+@keyframes navbar-on-scroll-zero {
+  0%{
+    top: -5rem;
+ }
+  100%{
+    top: 0.1rem;
+  }
 }
 
 .nav-links {
   position: absolute;
   left: 1rem;
-  transition: 1s;
+  display: flex;  
+  z-index: 2;
+  background:rgba(0, 0, 0, 0.56);
+  // transition: 0.5s;
+
+  // a class to set color to navbar anchor elements
+
+  
   ul {
-    margin-right: 35px;
     transition: 1s;
+    display: flex;
+  align-items: center;
+   padding: 0 1.5rem 0 1.5rem ;
+  
 
     li {
       display: inline-block;
-      margin-left: 3.5rem;
       font-family: Inter;
       text-transform: uppercase;
       a {
         text-decoration: none;
-        color: #353535;
+        color: #fff;
       }
     }
   }
@@ -64,12 +85,15 @@ section {
   content: "<";
   left: -15px;
   position: absolute;
+  color: white;
 }
 .coded-navlink::after,
 .nav-links li:hover::after {
   content: "/>";
   margin-left: 5px;
   position: absolute;
+  color: white;
+
 }
 
 .nav-links a:focus {
@@ -112,7 +136,7 @@ section {
     left: 0px;
   }
   100% {
-    left: 2rem;
+    left: 1.7rem;
   }
 }
 
@@ -125,8 +149,6 @@ section {
     left: 150px;
   }
 }
-
-
 
 .download-resume {
   border: none;
@@ -142,6 +164,9 @@ section {
   font-size: 16px;
   text-transform: uppercase;
   padding: 5px;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: #e9e9e9;
   cursor: pointer;
   &:hover {
     color: var(--gray-color);
@@ -151,13 +176,13 @@ section {
 
 .overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 1px;
+  top: 0px;
+  right: 0rem !important;
   height: 100vh;
   background-color: #fff5cf;
   animation: overlay 0.6s forwards;
   box-shadow: -1px 0px 0px 0px #a8ac8f;
+  z-index: 2;
   
   
   li{
@@ -180,6 +205,8 @@ section {
   }
   100% {
     width: 20rem;
+
+    
   }
 }
 
@@ -214,18 +241,18 @@ section {
   }
 }
 
-@keyframes move-about{
+@keyframes sidebar-open{
   0%{
     position: relative;
     right: 0px;
   }
   100%{
     position: relative;
-    right: 20rem;
+    right:20rem;
   }
 }
 
-@keyframes close-about{
+@keyframes sidebar-close{
   0%{
     position: relative;
     right: 20rem;
@@ -237,7 +264,16 @@ section {
 }
 // navbar responsive
 @media screen and (max-width: 1024px) {
-  
+  #home{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+  }
+  .header-typo{
+  }
   .c {  
     position: unset;
     img {
@@ -268,38 +304,54 @@ section {
   }
   #mypic{
     margin-top: min(30vw, 111px) ;
-    // width: 100%    ;
     width: 80vw;
     max-width: 360px;
     max-height: 360px;
     height:80vw !important;
+    z-index: -1;
   }
-  .header-typo{
-    margin-top: min(60vw,222px) !important;
-    width: 35vw;
-    h1{
-      font-size: 4rem !important;
-    }
-    p{
-      font-size: 3rem;
-    }
+  
+
+  .navbar{
+    top: 0;
   }
+
+  
 }
 
+
+
 @media screen and (min-width: 1024px) {
+  #home{
+    background-image: url(./assets/header-img.png) !important;
+    position: relative;
+  
+  }
   .nav-links {
-    display: block;
+    display: flex;
   }
   #burgermenu{
     display: none;
   }
+
+  .header-typo{
+    background-color: rgba(255, 255, 255, 0.51);
+    position: absolute;
+    padding: 1rem 0;
+    top: 30%;
+    right: 0;
+    z-index: 1;
+    width: 40%;
+    height: 30%;
+  }
+ 
+
+    
+
+
 }
 
 
   
-  // header 
-  #mypic{
-    transition: 0.5s ;
-  }
-
+  
   
