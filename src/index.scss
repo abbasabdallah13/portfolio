@@ -16,6 +16,7 @@
 * {
   margin: 0;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 
 }
 html {
@@ -272,8 +273,7 @@ section {
     display: flex;
     align-items: center;
   }
-  .header-typo{
-  }
+  
   .c {  
     position: unset;
     img {
@@ -323,7 +323,8 @@ section {
 
 @media screen and (min-width: 1024px) {
   #home{
-    background-image: url(./assets/header-img.png) !important;
+    background-image: url(./assets/header-img.png) !important ;
+    background-size: cover;
     position: relative;
   
   }
@@ -343,6 +344,7 @@ section {
     z-index: 1;
     width: 40%;
     height: 30%;
+    box-sizing: content-box;
   }
  
 

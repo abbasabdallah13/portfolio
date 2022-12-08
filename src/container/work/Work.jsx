@@ -1,37 +1,69 @@
 import {React, useState, useEffect} from "react";
-import  {urlFor, client} from '../../client'
-import pin from '../../assets/pin.png'
+import  { client} from '../../client'
 import './work.scss'
-import {motion} from 'framer-motion'
-import gitIcon from '../../assets/git-icon.png'
-import {FaGithub} from 'react-icons/fa'
-import { IconContext } from "react-icons";
+import WorkTitle from '../../assets/selectedWork.png';
+import CardsComponent from "./CardsComponent";
+import { Triangle } from "react-loader-spinner";
 const Work = () => {
-  const [myWork, setMyWork] = useState([]);
+  const [work, setWork] = useState([]);
+  const [currentSection, setCurrentSection] = useState('all');
+  const [loader, setLoader] = useState(false);
+  
+  
+  
   useEffect(() => {
-    const query = '*[_type=="work"]';
-    client.fetch(query).then((data)=>setMyWork(data));
-  }, []);
+
+    let query = '';
+    if(currentSection === 'all'){
+      query = `*[_type=="work"]`;
+    }else{
+      query = `*[_type=="work" && projectType=='${currentSection}']`;
+    }
+    client.fetch(query).then((data)=>setWork(data));
+
+  }, [currentSection]);
+
+  const workCategories = [
+    {
+      title: 'All',
+      sectionVar:'all'
+    },
+    {
+      title: 'Personal',
+      sectionVar: 'personal'
+    },
+    {
+      title:'Collaborated',
+      sectionVar: 'collaborated'
+    },
+    {
+      title:'HTML/CSS/JS',
+      sectionVar: 'js'
+    },
+  ]
+
+  const Loading = () => {
+    setLoader(true);
+    setTimeout(() => {
+      setLoader(false);
+    }, 2000);
+  }
   
-    return <section style={{backgroundColor: '#00A0D2', padding:'4rem', height:'fit-content'  }} id='work'  >
-    <h1 style={{fontFamily: 'Hepta Slab', color:'#000', textAlign:'center', fontSize:'2.5rem'}}>SELECTED WORK</h1>
-    <div className="work-cards-container"
-     >
-    {myWork.map(el => (
-      <motion.div className='work-card' 
-      whileHover={{rotateZ: [0,5,-5]}}
-      transition={{ duration: 0.7}}
-  
-      >
-        <img style={{position: 'absolute', top:'0',left:'50%', width:'10%'}} alt='pin' src={pin}  />
-        <img style={{maxWidth: '100%'}}  src={urlFor(el.imgurl)} alt={el.description} />
-        <p style={{textAlign: 'center', fontFamily:'hepta slab'}}>{el.description}</p>
-        <motion.a 
-        whileHover={{scale: 1.2}}
-        transition={{type:'spring',stiffness:200, damping: 2}}
-        style={{backgroundColor: '#353535', borderRadius:'10px', marginTop:'3%',padding:'3px 8px 3px 8px ',fontFamily:'Hepta Slab', textDecoration:'none', color:'white', fontWeight:'200',fontSize: '12px', display:'flex', alignItems:'center'}} href={el.giturl} target='_blank'><IconContext.Provider value={{color:'white'}}><FaGithub /></IconContext.Provider>&nbsp;View</motion.a>
-      </motion.div>
-    ))}
+    return <section style={{backgroundColor:'#00A0D2',  padding:'4rem', height:'fit-content', position:'relative', marginTop:'6rem'  }} id='work'  >
+    <div style={{display:'flex', justifyContent:'center'}}>
+      <img src={WorkTitle} alt='title' style={{position:'absolute', top:'-5rem'}} />
+    </div>
+    <div style={{display:'flex', border:'1px solid black', width:'fit-content', borderRadius:'2rem', backgroundColor:'whitesmoke', overflow:'hidden', fontFamily:'Hepta Slab'}}>
+      {
+        workCategories.map((el,i) => (
+          <div style={{borderRight:i===el.length-1?'':'1px solid black', padding:'0.5rem', backgroundColor: currentSection===el.sectionVar?'#ffd770':'transparent'}} onClick={()=>{setCurrentSection(el.sectionVar); Loading();}} >{el.title}</div>
+          ))
+      }
+    </div>
+
+    <div className="work-cards-container" style={{justifyContent:loader?'center':'unset', alignItems:loader?'center':'unset'}}>
+      {loader ? (<Triangle color='#ffd770' />) : <CardsComponent work={work} setWork={setWork} currentSection={currentSection}  /> }
+        
     </div>
   </section>;
 };

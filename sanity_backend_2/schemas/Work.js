@@ -4,8 +4,13 @@ export default {
     type: 'document',
     fields:[
         {
-            name:'description',
-            title: 'Description',
+            name:'projectType',
+            title: 'Project Type',
+            type: 'string'
+        },
+        {
+            name:'title',
+            title: 'Title',
             type: 'string'
         },
         {
@@ -20,6 +25,12 @@ export default {
             name: 'giturl',
             title: 'GitURL',
             type:'string'
+        },
+        {
+            name: 'description',
+            title: 'Project Description or Notes to Share',
+            type: 'string'
         }
+
     ]
 }

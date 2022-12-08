@@ -12,18 +12,39 @@
     position: relative;
     align-items: center;
     flex-direction: column; 
-    padding: 1.3% 1.3% 5px 1.3%; 
-    background-color: #ffe88c; 
-    margin-left: 5%;
     width: 18.75%;
-    box-sizing: border-box;
+    margin-left: 5%;
+   
     margin-top: 2%;
     font-size: 1.1rem;
     font-weight: 600;
+   
+}
+
+.frontWorkCard{
+    position: relative;
+    transform: rotateY(0deg);
+    transition:1s;
+    background-color:#ffd770;
+    padding: 7% 7% 5px 7%; 
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.534);
+    box-sizing: border-box;
+
+
     p{
         margin-top: 4%;
     }
+
+
+}
+
+.backWorkCard{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background-color: #fff;
+    transition:1s;
 }
 
 @media screen and (max-width: 768px){
