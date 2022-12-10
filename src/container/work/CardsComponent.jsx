@@ -29,7 +29,7 @@ const CardsComponent = ({work}) => {
   
       >
         <div className='frontWorkCard' style={{transform:!flipCard?'rotateY(0deg)':cardId===el.title?'rotateY(180deg)':'rotateY(0deg)'}}>
-          <img style={{position: 'absolute', top:'0',left:'50%', width:'10%'}} alt='pin' src={pin}  />
+          <img style={{position: 'absolute', top:'0',left:'50%', width:'min(10%,20.5px)'}} alt='pin' src={pin}  />
           <img style={{width: '100%', height:'14rem'}}  src={urlFor(el.imgurl)} alt={el.title} />
           <p style={{textAlign: 'center', fontFamily:'hepta slab'}}>{el.title}</p>
           <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'.5rem', fontFamily:'Hepta Slab', color:'white', fontWeight:'400', fontSize:'.8rem'}}>
@@ -53,7 +53,7 @@ const CardsComponent = ({work}) => {
         </div>
 
         <div className='backWorkCard' style={{opacity:!flipCard?'0':cardId===el.title?'1':'0',transform:!flipCard?'rotateY(-180deg)':cardId===el.title?'rotateY(0deg)':'rotateY(-180deg)', zIndex:!flipCard?'-1':cardId===el.title?'1':'-1', padding:'2.3rem'}}>
-          <img style={{position: 'absolute', top:'0',left:'50%', width:'10%'}} alt='pin' src={pin}  />
+          <img style={{position: 'absolute', top:'0',left:'50%', width:'min(10%,20.5px)'}} alt='pin' src={pin}  />
           <div style={{border:'1px solid black', width:'100%', height:'100%', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
             <div style={{display:'flex', flexDirection:'column', width:'100%', fontFamily:'Hepta Slab', padding:'0 0.5rem'}}>
               <div style={{textAlign:'center', padding:'.1rem', borderBottom:'5px solid #ffd770'}}>
