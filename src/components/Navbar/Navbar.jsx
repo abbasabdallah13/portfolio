@@ -6,6 +6,7 @@ import { FaAngleDoubleDown } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import Resume from '../../assets/my_cv.pdf'
+import './Navbar.scss';
 
 const Navbar = () => {
 
@@ -99,15 +100,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <a href="#home">
-      <div className="logo-container">
-        <div className="child a">
-          <img src={logoA} alt="logo section a" />
+        <div className="logo-container">
+          <div className="child a">
+            <img src={logoA} alt="logo section a" />
+          </div>
+          <div className="child b">HONEYCODED</div>
+          <div className="child c">
+            <img src={logoC} alt="logo section c" />
+          </div>
         </div>
-        <div className="child b">HONEYCODED</div>
-        <div className="child c">
-          <img src={logoC} alt="logo section c" />
-        </div>
-      </div></a>
+      </a>
       <div className="nav-links">
       <div id="headerLogo"  style={{backgroundColor: 'rgba(255, 255, 255, 0.70)', display: 'flex', justifyContent: 'center'}}><img src={fullLogo} style={{width: '90%'}}  /></div>
         <ul>
