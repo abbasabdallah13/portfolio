@@ -30,6 +30,16 @@ export default {
             name: 'description',
             title: 'Project Description or Notes to Share',
             type: 'string'
+        },{
+            name:'skillsUsed',
+            title:'Skills Used',
+            type:'array',
+            of:[
+                {
+                type:'reference',
+                to:{type:'skills'}
+                }
+            ]
         }
 
     ]

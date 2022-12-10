@@ -19,7 +19,7 @@ const Work = () => {
     }else{
       query = `*[_type=="work" && projectType=='${currentSection}']`;
     }
-    client.fetch(query).then((data)=>setWork(data));
+    client.fetch(query).then((data)=>{setWork(data); console.log(data)});
 
   }, [currentSection]);
 
@@ -46,13 +46,15 @@ const Work = () => {
     setLoader(true);
     setTimeout(() => {
       setLoader(false);
-    }, 2000);
+    }, 1500);
   }
   
-    return <section style={{backgroundColor:'#00A0D2',  padding:'4rem', height:'fit-content', position:'relative', marginTop:'6rem'  }} id='work'  >
-    <div style={{display:'flex', justifyContent:'center'}}>
-      <img src={WorkTitle} alt='title' style={{position:'absolute', top:'-5rem'}} />
+    return (
+    <section className="work-section"  style={{ position:'relative', height:'fit-content' }} id='work'  >
+    <div style={{display:'flex', justifyContent:'center', width:'100%'}}>
+      <img src={WorkTitle} alt='title' style={{maxWidth:'70%'}} />
     </div>
+    <div style={{backgroundColor:'#00A0D2', padding:'4rem', height:'fit-content'}}>
     <div style={{display:'flex', border:'1px solid black', width:'fit-content', borderRadius:'2rem', backgroundColor:'whitesmoke', overflow:'hidden', fontFamily:'Hepta Slab'}}>
       {
         workCategories.map((el,i) => (
@@ -65,7 +67,8 @@ const Work = () => {
       {loader ? (<Triangle color='#ffd770' />) : <CardsComponent work={work} setWork={setWork} currentSection={currentSection}  /> }
         
     </div>
-  </section>;
+    </div>
+  </section>)
 };
 
 export default Work;

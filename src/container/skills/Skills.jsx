@@ -20,8 +20,8 @@ const isInView = useInView(ref);
 
 
   return (
-    <section style={{marginTop:'5rem', height:'150vh', position:'relative'}} id='skills'>
-        <div style={{position:'relative', top:'1.6rem', textAlign:'center'}}><img src={skillsTitle} alt='skills title'  /></div>
+    <section style={{marginTop:'5rem', height:'fit-content', position:'relative'}} id='skills'>
+      <div style={{position:'relative', top:'min(25px,4vw)', textAlign:'center', width:'100%'}}><img src={skillsTitle} alt='skills title' style={{ maxWidth:'70%'}} /></div>
       <div style={{backgroundColor:'#37B7B3',paddingBottom:'10rem', display:'flex', justifyContent:'space-around', fontFamily:'Hepta Slab'}}>
         <div className='skills-container' >
           <img src={nontechnicalSkills} alt='non technical skills' />
@@ -52,7 +52,7 @@ const isInView = useInView(ref);
           <br/><br/>I also frequently work with Sanity, an online backend solution. With it I have made data accessible in this portfolio and the Online Wedding Invitations Platform collaboration project.</p>
         </div>
       </div>
-      <div style={{display:'flex', justifyContent:'center', position:'absolute', top:'31rem', width:'100%'}}>
+      <div style={{display:'flex', justifyContent:'center', position:'absolute', top:'85%', width:'100%'}}>
         <div style={{width:'80%', backgroundColor:'#fff',  borderTopLeftRadius:'54px', borderTopRightRadius:'54px', display:'flex', flexWrap:'wrap', border:'1px solid black', paddingBottom:'2rem'}}>
           {skills.map(el=>(
             <div style={{display:'flex', flexDirection:'column', marginLeft:'5rem',marginTop:'2rem', justifyContent:'space-around', height:'5rem', alignItems:'center'}}>
