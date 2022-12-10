@@ -14,7 +14,7 @@ const CardsComponent = ({work}) => {
   
     useEffect(() => {
       let varArr= [];
-      currentSkills.map(el=>{varArr.push(el._ref)});
+      currentSkills.map(el=>{varArr.push(el._ref); return ''});
       console.log(varArr);
       client.fetch(`*[_type=='skills' && _id in $ids]`,{ids: varArr}).then((data)=> setSkills(data))
     }, [currentSkills]);
@@ -32,7 +32,7 @@ const CardsComponent = ({work}) => {
           <img style={{position: 'absolute', top:'0',left:'50%', width:'10%'}} alt='pin' src={pin}  />
           <img style={{width: '100%', height:'14rem'}}  src={urlFor(el.imgurl)} alt={el.title} />
           <p style={{textAlign: 'center', fontFamily:'hepta slab'}}>{el.title}</p>
-          <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'.5rem', fontFamily:'Hepta Slab', color:'white', fontWeight:'400', fontSize:'.8rem', marginTop:'3%'}}>
+          <div style={{display:'flex', justifyContent:'center', alignItems:'center', marginTop:'.5rem', fontFamily:'Hepta Slab', color:'white', fontWeight:'400', fontSize:'.8rem'}}>
             <motion.a 
             whileHover={{scale: 1.2}}
             transition={{type:'spring',stiffness:200, damping: 2}}

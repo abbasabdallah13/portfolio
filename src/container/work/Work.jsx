@@ -1,14 +1,17 @@
-import {React, useState, useEffect} from "react";
+import {React, useState, useEffect, useRef} from "react";
 import  { client} from '../../client'
 import './work.scss'
 import WorkTitle from '../../assets/selectedWork.png';
 import CardsComponent from "./CardsComponent";
 import { Triangle } from "react-loader-spinner";
+import { useInView } from "framer-motion";
 const Work = () => {
   const [work, setWork] = useState([]);
   const [currentSection, setCurrentSection] = useState('all');
   const [loader, setLoader] = useState(false);
   
+  const ref = useRef(null)
+  const isInView = useInView(ref);
   
   
   useEffect(() => {
@@ -52,7 +55,7 @@ const Work = () => {
     return (
     <section className="work-section"  style={{ position:'relative', height:'fit-content' }} id='work'  >
     <div style={{display:'flex', justifyContent:'center', width:'100%'}}>
-      <img src={WorkTitle} alt='title' style={{maxWidth:'70%'}} />
+      <img src={WorkTitle} alt='title' ref={ref}  style={{maxWidth:'70%',opacity: isInView?'1':0, transition:'1s', transform:!isInView?'translateX(-200px)':'translateX(0)'}} />
     </div>
     <div style={{backgroundColor:'#00A0D2', padding:'4rem', height:'fit-content'}}>
     <div style={{display:'flex', border:'1px solid black', width:'fit-content', borderRadius:'2rem', backgroundColor:'whitesmoke', overflow:'hidden', fontFamily:'Hepta Slab'}}>

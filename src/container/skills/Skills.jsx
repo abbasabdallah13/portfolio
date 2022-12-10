@@ -1,6 +1,6 @@
 import {React, useState, useEffect, useRef} from "react";
 import { client, urlFor } from "../../client";
-import {motion, useInView} from 'framer-motion'
+import {useInView} from 'framer-motion'
 import skillsTitle from '../../assets/workExperience.png';
 import nontechnicalSkills from '../../assets/nontechnicalskills.png';
 import frontendIcon from '../../assets/frontendIcon.png';
@@ -21,7 +21,7 @@ const isInView = useInView(ref);
 
   return (
     <section style={{marginTop:'5rem', height:'fit-content', position:'relative'}} id='skills'>
-      <div style={{position:'relative', top:'min(25px,4vw)', textAlign:'center', width:'100%'}}><img src={skillsTitle} alt='skills title' style={{ maxWidth:'70%'}} /></div>
+      <div style={{position:'relative', top:'min(25px,4vw)', textAlign:'center', width:'100%', opacity: isInView?'1':0, transition:'1s', transform:!isInView?'translateX(-200px)':'translateX(0)'}} ref={ref}><img src={skillsTitle} alt='skills title' style={{ maxWidth:'70%'}} /></div>
       <div style={{backgroundColor:'#37B7B3',paddingBottom:'10rem', display:'flex', justifyContent:'space-around', fontFamily:'Hepta Slab'}}>
         <div className='skills-container' >
           <img src={nontechnicalSkills} alt='non technical skills' />
