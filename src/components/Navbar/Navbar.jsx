@@ -69,6 +69,9 @@ const Navbar = () => {
         }
         resumeBtn.style.display = "none";
       } else {
+        if(window.innerWidth >= 1024){
+          children[1].style.fontSize = "0px";
+        };
         logo.style.display='none';
         navbar.style.top= '0rem';
         navlinks.style.marginTop='unset';
@@ -77,7 +80,6 @@ const Navbar = () => {
         for(let i=0; i<navbarLinks.length;i++){
           navbarLinks[i].style.color='#000'
         }
-        children[1].style.fontSize = "0px";
         children[2].style.animation = "logo 1s forwards";
         logoContainer.style.display='flex';
         navbar.style.backgroundColor = "white";
