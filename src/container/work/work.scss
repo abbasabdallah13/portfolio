@@ -52,15 +52,15 @@
     background-color: #353535;
     border-radius: 10px;
     color:white;
-    padding: .3rem .5rem;
     border:none;
     text-decoration: none;
+    padding: 1rem !important;
+    font-size: 1.5rem !important;
     cursor:pointer;
-    font-size:1rem;
-
-
-
-
+    @media screen and (min-width:400px){
+        font-size:1.2rem !important;
+        padding: .5rem !important;
+    }
 }
 
 .backWorkCard{
@@ -70,6 +70,32 @@
     height:100%;
     background-color: #fff;
     transition:1s;
+}
+
+.back-work-description{
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+    @media screen and (min-width: 400px) {
+        font-size: .8rem;
+    }
+}
+
+.back-arrow{
+width:3rem;
+height:3rem;
+padding:0.1rem;
+border-radius:50%;
+background-color:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+@media screen and (min-width: 400px){
+    width:2rem;
+    height:2rem;  
+    margin-top: 5px;  
+}
+
 }
 
 @media screen and (max-width: 768px){
