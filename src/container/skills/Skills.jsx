@@ -49,7 +49,12 @@ const isInView = useInView(ref);
           <img src={backendIcon} alt='backend icon' />
           <h4>Backend Development:</h4>
           <p> Node js is my backend language. 
-          <br/><br/>I also frequently work with Sanity, an online backend solution. With it I have made data accessible in this portfolio and the Online Wedding Invitations Platform collaboration project.</p>
+          <br/><br/>I also frequently work with Sanity, an online backend solution. With it I have made data accessible in this portfolio project.
+          <br></br>
+          <br></br>I have experienced databases including postGRE SQl.
+          <br></br>
+          <br></br>I have worked on a project using PHPMyAdmin and SQL with php before changing my interest to node.js.
+          </p>
         </div>
       </div>
       <div style={{display:'flex', justifyContent:'center', position:'absolute', top:'85%', width:'100%'}}>

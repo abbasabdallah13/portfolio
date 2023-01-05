@@ -29,11 +29,23 @@ section {
 
 #home{
   padding-top: 10rem;
-  height: fit-content;
+  height: 100vh;
   background-color: #bbe4f0;
     .mobile-pic{
       width: 50%;
     }  
+
+    @media screen and (min-width:400px) {
+      height: fit-content;  
+    }
+    @media screen and (max-width: 600px) {
+        .mobile-pic{
+          width: 70vw;
+          max-width: 100%;
+        }
+    }
+
+
     @media screen and (min-width: 1024px) {
         background-image: url(./assets/header-img.png);
         background-size: cover;
