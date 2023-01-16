@@ -36,6 +36,10 @@ const Work = () => {
       sectionVar: 'personal'
     },
     {
+      title: 'Freelance',
+      sectionVar: 'freelance'
+    },
+    {
       title:'Collaborated',
       sectionVar: 'collaborated'
     },
