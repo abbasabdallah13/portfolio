@@ -86,7 +86,7 @@ const Work = () => {
               <button 
                 style={{marginTop:'2rem', width: '50%', padding:'1rem', backgroundColor:' black',color:'#00A0d2', fontFamily:'hepta slab', fontSize: '1.5rem', fontWeight: '700', cursor: 'pointer'}}
                 onClick={()=> setVisibleItems(prev =>  prev >= work.length?prev-2:prev + 2)}
-              >{visibleItems>=work.length?'Load Less':'Load More'}
+              >{visibleItems>=work.length?'Load Less':'Load More . . .'}
               </button>
            </div>
           )
