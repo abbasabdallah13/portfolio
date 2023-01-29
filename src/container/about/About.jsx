@@ -26,7 +26,7 @@ more experience. Think we'd be a good match ?
           <span className='contact-button-2'></span>
        </div>
     </div>
-    <img src={aboutImg} style={{width:'40%'}} alt='about image' />
+    <img src={aboutImg} style={{width:'40%'}} alt='about' />
   </section>;
 };
 
