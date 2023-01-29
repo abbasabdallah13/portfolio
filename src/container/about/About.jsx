@@ -16,7 +16,7 @@ I liked the development field while I was attending courses such as HTML, CSS, J
 So then I decided to sharpen these skills by attending an online boot camp
 in 2021 where I further learned and practiced 
 the fundamentals of HTML & CSS, JS, and Frameworks and Libararies. 
-With good knowledge of logical algorithms, I gained certificate in the 
+With good knowledge of logical algorithms, I gained certificates in the 
 mentioned skills. 
 My main focus these days is on working on projects by myself to gain 
 more experience. Think we'd be a good match ?

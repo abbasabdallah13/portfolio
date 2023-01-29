@@ -2,12 +2,12 @@ import React from "react";
 import fullLogo from '../../assets/logo-full.png'
 
 const Footer = () => {
-  return <div style={{position:'relative', backgroundColor:'#fee88c', padding:'2rem 0 1rem 2rem'}}>
-    <div style={{display:'flex', flexDirection:'column', fontFamily:'Hepta Slab'}}>
-      <h3>Beirut, Lebanon</h3>
-      <h3 style={{marginTop:'1rem',fontSize:'0.8rem'}}>All rights reserved</h3>
+  return <div style={{position:'relative', backgroundColor:'#fee88c', padding:'0 0.5rem 0 0.5rem'}}>
+    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', fontFamily:'Hepta Slab'}}>
+      <h5>Beirut, Lebanon</h5>
+      <h5 style={{fontSize:'0.8rem'}}>All rights reserved</h5>
+    <img  style={{width:'min(20%,130px)'}}  src={fullLogo} alt='logo' />
     </div>    
-    <img  style={{width:'min(20%,130px)',position:'absolute', bottom:'0', right:'0'}}  src={fullLogo} alt='logo' />
   </div>;
 };
 
