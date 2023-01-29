@@ -27,37 +27,6 @@ section {
 }
 
 
-#home{
-  padding-top: 10rem;
-  height: 100vh;
-  background-color: #fefefe;
-    .mobile-pic{
-      width: 50%;
-    }  
-
-    @media screen and (min-width:400px) {
-      height: fit-content;  
-    }
-    @media screen and (max-width: 600px) {
-        .mobile-pic{
-          width: 70vw;
-          max-width: 100%;
-        }
-    }
-
-
-    @media screen and (min-width: 1024px) {
-        background-image: url(./assets/header-img.png);
-        background-size: cover;
-        position: relative;
-        height: 100vh;
-        .mobile-pic{
-          display: none;
-        }
-        }
-    
-  }
-
 
 
   

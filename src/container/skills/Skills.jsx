@@ -21,8 +21,10 @@ const isInView = useInView(ref);
 
   return (
     <section style={{marginTop:'5rem', height:'fit-content', position:'relative', paddingTop:'1rem'}} id='skills'>
-      <div style={{position:'relative', top:'min(25px,4vw)', textAlign:'center', width:'100%', opacity: isInView?'1':0, transition:'1s', transform:!isInView?'translateX(-200px)':'translateX(0)'}} ref={ref}><img src={skillsTitle} alt='skills title' style={{ maxWidth:'70%'}} /></div>
-      <div style={{backgroundColor:'#202020',paddingBottom:'10rem', display:'flex', justifyContent:'space-around', fontFamily:'Hepta Slab'}}>
+      <div style={{fontSize:'1.7rem', position:'relative', textAlign:'center', width:'100%', opacity: isInView?'1':0, transition:'1s', transform:!isInView?'translateX(-200px)':'translateX(0)'}} ref={ref}>
+        <h1 style={{fontFamily: 'hepta slab', color:'black'}}>SKILLS & EXPERIENCE</h1>
+      </div>
+      <div style={{backgroundColor:'#000',paddingBottom:'10rem', display:'flex', justifyContent:'space-around', fontFamily:'Hepta Slab'}}>
         <div className='skills-container' >
           <img src={nontechnicalSkills} alt='non technical skills' />
           <h4>Non-technical skills:</h4>
@@ -58,7 +60,7 @@ const isInView = useInView(ref);
         </div>
       </div>
       <div style={{display:'flex', justifyContent:'center', position:'absolute', top:'85%', width:'100%'}}>
-        <div style={{width:'80%', backgroundColor:'#fff',  borderTopLeftRadius:'54px', borderTopRightRadius:'54px', display:'flex', flexWrap:'wrap', border:'1px solid black', paddingBottom:'2rem'}}>
+        <div style={{width:'80%', backgroundColor:'#fff',  borderTopLeftRadius:'54px', borderTopRightRadius:'54px', display:'flex', flexWrap:'wrap', border:'2px solid black', paddingBottom:'2rem'}}>
           {skills.map(el=>(
             <div style={{display:'flex', flexDirection:'column', marginLeft:'5rem',marginTop:'2rem', justifyContent:'space-around', height:'5rem', alignItems:'center'}}>
               <img src={urlFor(el.imgurl)} alt={el.title} style={{width:'3rem'}}/>

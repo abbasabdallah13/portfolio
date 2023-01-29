@@ -1,7 +1,7 @@
 import {React, useEffect} from "react";
-import headerTypo from '../../assets/header typo.png'
+import theperfecthoneyjar from '../../assets/theperfecthoneyjar.png';
+import helloworldiamabbas from '../../assets/helloworldimabbas.png';
 import './header.scss';
-import mobilePic from '../../assets/mobile-header-pic.png';
 
 const Header = () => {
   useEffect(() => {
@@ -9,12 +9,9 @@ const Header = () => {
   }, []);
   
   return (
-<div className="header">
-      <h1 style={{fontFamily:'hepta slab'}}>Hello World,</h1>
-      <div className="header-typo">
-      <img src={headerTypo} style={{maxWidth: '80%'}}  alt='header typo' />
-      </div>
-      <div style={{display:'flex', justifyContent:'center', marginTop:'4rem'}}> <img src={mobilePic} className='mobile-pic' alt="'mobile pic" /></div>
+  <div className="header">
+      <img className="perfecthoneyjar" src={theperfecthoneyjar} alt='the perfect honey jar' />
+      <img className="helloworldimabbas"  src={helloworldiamabbas} style={{marginBottom: '3rem', marginLeft: '6rem'}}  alt='hello world' />
   </div>);
 };
 

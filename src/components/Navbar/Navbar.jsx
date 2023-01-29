@@ -56,7 +56,7 @@ const Navbar = () => {
         navlinks.style.marginTop='24px';
         logoContainer.style.display='none';
         logo.style.display='flex';
-        navlinks.style.backgroundColor='rgba(0, 0, 0, 0.56)';
+        navlinks.style.backgroundColor='rgba(0, 0, 0)';
         navbar.style.top= '1.3rem';
         navlinks.style.animation = 'navbar-on-scroll-zero 0.5s';
 
@@ -113,7 +113,7 @@ const Navbar = () => {
         </div>
       </a>
       <div className="nav-links">
-      <div id="headerLogo"  style={{backgroundColor: 'rgba(255, 255, 255, 0.70)', display: 'flex', justifyContent: 'center'}}><img src={fullLogo} style={{width: '90%'}}  /></div>
+      <div id="headerLogo"  style={{backgroundColor: 'rgba(255, 255, 255)',border:'2px solid #000', display: 'flex', justifyContent: 'center'}}><img src={fullLogo} style={{width: '90%'}}  /></div>
         <ul>
           {navlinks.map((el) =>
             el === "about" ? (

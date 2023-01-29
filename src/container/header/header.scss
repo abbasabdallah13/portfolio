@@ -1,43 +1,27 @@
-.header-typo{
-    padding:1rem;
-    box-sizing: content-box;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.491);
-    @media screen and (min-width: 1024px) {
-            background-color: rgba(255, 255, 255, 0.51);
-            position: absolute;
-            top: 30%;
-            right: 0;
-            // padding: 2rem 0;
-            width: 40%;
-            height: 25%;
+.header{
+  display: flex;
+  height: 80vh;
+  margin-top: 20vh;
+  justify-content: space-around;
+  @media screen and (max-width: 600px){
+    .perfecthoneyjar{
+      display: none;
     }
-  
+   .helloworldimabbas{
+    height: fit-content;
+      width: 100% !important;
+      margin-right: unset !important;
+      margin-top: unset !important;
+    }
   }
+  @media screen and (max-width: 799px){
+    .perfecthoneyjar{
+      width: 40%;
 
-  .header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    h1{
-      @media screen and (min-width: 1024px){
-        display: none;
-      }
+    }
+    .helloworldimabbas{
+      width: 50%
     }
   }
 
-  .black-overlay{
-    position: absolute;
-    top: 0;
-    left:0; 
-    width: 100vw; 
-    max-width: 100% ;  
-    height: 100vh; 
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 0;
-    display: none;
-    @media screen and (min-width: 1024px){
-        display: unset;
-    }
-  }
+}
