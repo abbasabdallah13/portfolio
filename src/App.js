@@ -1,5 +1,5 @@
 import React from "react";
-import { About, Header, Footer, Skills, Work, Contact } from "./container";
+import { About, Header, Footer, Skills, Work, Contact, Testimonials } from "./container";
 import { Navbar } from "./components";
 import "@fontsource/hepta-slab";
 
@@ -15,6 +15,7 @@ const App = () => {
       <About />
       <Skills />
       <Work />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

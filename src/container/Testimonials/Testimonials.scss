@@ -1,0 +1,64 @@
+.testimonials-div{
+    font-family: 'Inter';
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding-top: 4rem;
+}
+
+.carousel-container{
+    height: 80vh;
+    overflow-x: hidden;
+    // transform: translateX(0vw);
+    display: flex;
+    transition: 1s;
+}
+
+.carousel-card{
+    display: flex;
+    width: 1200px;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    img{
+        width: max(14vw,100px);
+        height: max(14vw,100px);
+        border-radius: 50%;
+        border: #F66D00 5px solid;
+    }
+    p{
+        font-size: 1.6rem !important;
+        @media screen and (min-width: 600px){
+            font-size: 1rem !important;
+        }
+    }
+    h3{
+        font-size: 1.6rem !important;
+        @media screen and (min-width: 600px){
+            font-size: 1rem !important;
+        }
+    }
+}
+
+.rec.rec-arrow {
+    color: #F66D00;
+
+    &:hover{
+        
+    }
+}
+
+.rec.rec-arrow:hover{
+    background-color: #F66D00 !important;
+    border: 1px solid #F66D00;
+    color: white;
+}
+.rec.rec-arrow:focus{
+    background-color: #F66D00 !important;
+    border: 1px solid #F66D00;
+    color: white;
+}

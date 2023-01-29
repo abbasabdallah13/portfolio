@@ -10,7 +10,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
 
-  const navlinks = ["about", "skills", "work", "contact"];
+  const navlinks = ["about", "skills", "work", "testimonials", "contact"];
   const [openOverlay, setOpenOverlay] = useState(false);
 
   const toggleSidebar = () => {

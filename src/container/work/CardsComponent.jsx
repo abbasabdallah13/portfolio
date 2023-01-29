@@ -5,11 +5,12 @@ import { IconContext } from "react-icons";
 import {BiArrowBack} from 'react-icons/bi'
 import { client, urlFor } from "../../client";
 
-const CardsComponent = ({work}) => {
+const CardsComponent = ({work, visibleItems}) => {
     const [flipCard, setFlipCard] = useState(false);
     const [cardId, setCardId] = useState('');
     const [currentSkills, setCurrentSkills] = useState([]);
     const [skills, setSkills] = useState([]);
+
     
   
     useEffect(() => {
@@ -22,7 +23,7 @@ const CardsComponent = ({work}) => {
 
   return (
     <>
-  {work.map(el => (
+  {work.slice(0, visibleItems).map(el => (
       <motion.div className='work-card' 
       whileHover={{rotateZ: [0,5,-5]}}
       transition={{ duration: 0.7}}
