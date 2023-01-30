@@ -1,7 +1,6 @@
 import {React, useState, useEffect, useRef} from "react";
 import { client, urlFor } from "../../client";
 import {useInView} from 'framer-motion'
-import skillsTitle from '../../assets/workExperience.png';
 import nontechnicalSkills from '../../assets/nontechnicalskills.png';
 import frontendIcon from '../../assets/frontendIcon.png';
 import backendIcon from '../../assets/backendIcon.png';

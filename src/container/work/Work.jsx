@@ -1,7 +1,6 @@
 import {React, useState, useEffect, useRef} from "react";
 import  { client} from '../../client'
 import './work.scss'
-import WorkTitle from '../../assets/selectedWork.png';
 import CardsComponent from "./CardsComponent";
 import { Triangle } from "react-loader-spinner";
 import { useInView } from "framer-motion";
