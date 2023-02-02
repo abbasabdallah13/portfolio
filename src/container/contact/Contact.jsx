@@ -12,7 +12,7 @@ const Contact = () => {
         <h1 className='large-text'>+ 961 3 75 95 68</h1>
         <br />
         <p className='small-text'>email me</p>
-        <h1 className='large-text'>personal@honeycoded.fun</h1>
+        <h1 className='large-text'>abbasab13@outlook.com</h1>
         <br />
         <p className='small-text'>follow me</p>
         <div style={{display:'flex'}}>
