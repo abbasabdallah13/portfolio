@@ -27,9 +27,9 @@ const isInView = useInView(ref);
         <div className='skills-container' >
           <img src={nontechnicalSkills} alt='non technical skills' />
           <h4>Non-technical skills:</h4>
-          <p>Creative <span style={{color:'#ffcf52', fontWeight:'600'}}>problem-solver</span> with the ability to figure out the best approach to develop a design, to fixing up bugs that crop up, to figuring out how
+          <p>Creative <span style={{color:'#FEA24B', fontWeight:'600'}}>problem-solver</span> with the ability to figure out the best approach to develop a design, to fixing up bugs that crop up, to figuring out how
             to make the front end work with the backend.
-            <br/><br/>Posses<span style={{color:'#ffcf52', fontWeight:'600'}}> verbal and vocal communication skills</span> necessary
+            <br/><br/>Posses<span style={{color:'#FEA24B', fontWeight:'600'}}> verbal and vocal communication skills</span> necessary
             to communicate ideas with others. 
           </p>
           <p>
@@ -42,7 +42,7 @@ const isInView = useInView(ref);
           <p>
           I develop designs using the most optimized and neat code in my editor and have the necessary skills to test using various libraries.
           <br/><br/>PS. I sometimes get creative making up my own designs.
-          <br/><br/><span style={{color:'#ffcf52', fontWeight:'600'}}>Actual Work Experience:</span> since 2020
+          <br/><br/><span style={{color:'#FEA24B', fontWeight:'600'}}>Actual Work Experience:</span> since spring 2017
           </p>
         </div>
 
