@@ -2,16 +2,15 @@ import React, { useEffect } from "react";
 import { About, Header, Footer, Skills, Work, Contact, Testimonials } from "./container";
 import { Navbar } from "./components";
 import "@fontsource/hepta-slab";
+import Sidelinks from "./components/sidelinks/Sidelinks";
 
 
 const App = () => {  
   return (
     <div>
-      <section  id="home" >
-        <Navbar />
-        <Header />
-        <div className="black-overlay"></div>
-      </section>
+      <Navbar />
+      <Sidelinks />
+      <Header />
       <About />
       <Skills />
       <Work />

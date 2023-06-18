@@ -1,27 +1,27 @@
-.header{
-  display: flex;
-  height: 80vh;
-  margin-top: 20vh;
-  justify-content: space-around;
-  @media screen and (max-width: 600px){
-    .perfecthoneyjar{
-      display: none;
-    }
-   .helloworldimabbas{
-    height: fit-content;
-      width: 100% !important;
-      margin-right: unset !important;
-      margin-top: unset !important;
-    }
-  }
-  @media screen and (max-width: 799px){
-    .perfecthoneyjar{
-      width: 40%;
+.typing{
+  position: relative;
+}
 
-    }
-    .helloworldimabbas{
-      width: 50%
-    }
-  }
+.typing::after{
+  content: '|';
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  animation: flashing 450ms infinite, typing-animation steps(4) 2s infinite alternate;
+}
 
+@keyframes typing-animation {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 130%;
+  }
+}
+
+@keyframes flashing {
+  50%{
+    color: transparent
+  }
 }

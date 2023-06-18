@@ -1,73 +1,24 @@
-#work{
+#work, .cursor-honeyjar{
     cursor: url('../../assets/honey-cursor.png'), auto !important;
-}
-.work-cards-container{
-    display: flex;
-    flex-wrap: wrap; 
 }
 
 .work-card{
-    display: flex;
     position: relative;
-    align-items: center;
+    display: flex;
     flex-direction: column; 
-    margin-top: 2%;
-    width:80%;
-    margin-left: 10%;
-    font-weight: 600;
-
-
-    @media screen and (min-width: 400px){
-        width: 45%;
-        margin-left: 5%;
-    }
-    
-    @media screen and (min-width: 768px){
-        font-size: 1.1rem;
-    }
-   
+    align-items: center;   
 }
 
 .frontWorkCard{
-    position: relative;
-    width: 100%;
     transform: rotateY(0deg);
     transition:1s;
-    background-color:#ffd770;
-    padding: 10% 3% 5px 3%; 
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.534);
-    box-sizing: border-box;
-
-
-    p{
-        margin-top: 4%;
-    }
-
-
 }
 
-
-.work-card-btn{
-    width: fit-content;
-    background-color: #353535;
-    border-radius: 10px;
-    color:white;
-    border:none;
-    text-decoration: none;
-    padding: 1rem !important;
-    font-size: 1.5rem !important;
-    cursor:pointer;
-    @media screen and (min-width:400px){
-        font-size:1.2rem !important;
-        padding: .5rem !important;
-    }
-}
 
 .backWorkCard{
     position: absolute;
     top: 0;
-    width: 100%;
-    height:100%;
+
     background-color: #fff;
     transition:1s;
 }
@@ -110,16 +61,5 @@ cursor:pointer;
     padding: 2.5% 2.5% 5px 2.5%; 
         // width: 42.5%;
         font-size: 1.7rem;
-    }
-}
-
-.work-section{
-    margin-top: 40%;
-    @media screen and (max-width: 600px){
-        margin-top:50% ;
-    }
-    @media screen and (max-width: 482px) {
-        margin-top:70%;
-        
     }
 }

@@ -12,6 +12,14 @@ export default {
             }
         },
         {
+            name: 'bubbleImg',
+            title: 'bubbleImg',
+            type: 'image',
+            options: {
+                hotspot:true
+            }
+        },
+        {
             name: 'title',
             title: 'Title',
             type: 'string'

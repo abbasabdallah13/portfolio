@@ -1,28 +1,39 @@
 import React from "react";
-import Whatsapp from '../../assets/whatsapp.png'
-import Instagram from '../../assets/instagram.png'
-import Twitter from '../../assets/twitter.png'
-import LinkedIn from '../../assets/linkedin.png'
-import './contact.scss'
-const Contact = () => {
-  return <section id='contact' style={{backgroundColor:'#202020', padding:'4rem', fontFamily:'Hepta Slab', height:'fit-content'}}>
-    <h1 className='large-text'>CONTACT ME</h1>
-    <div style={{marginLeft:'5rem', marginTop:'2rem'}}>
-        <p className='small-text'>call me or <img src={Whatsapp} className='social-media-icon'  alt='whatsapp' /></p>
-        <h1 className='large-text'>+ 961 3 75 95 68</h1>
-        <br />
-        <p className='small-text'>email me</p>
-        <h1 className='large-text'>abbasab13@outlook.com</h1>
-        <br />
-        <p className='small-text'>follow me</p>
-        <div style={{display:'flex'}}>
-           <a href="https://www.instagram.com/honeycoded13/" target='_blank' className='social-media-icon'> <img src={Instagram} alt='instagram'  style={{width:'100%', height:'100%'}}  /></a>
-           <a href="https://twitter.com/honey_coded" target='_blank' className="social-media-icon"> <img src={Twitter} alt='twitter'style={{width:'100%', height:'100%'}}  /></a>
-           <a href="https://www.linkedin.com/in/honeycoded/" target='_blank' className="social-media-icon"> <img src={LinkedIn} alt='linkedin'style={{width:'100%', height:'100%'}}  /></a>
-        </div>
-    </div>
 
-  </section>;
+import mail from '../../assets/mail.png'
+import phone from '../../assets/phone.png'
+import chat from '../../assets/chat.png'
+import waBIcon from '../../assets/waBusinessIcon.png'
+
+const Contact = () => {
+  return (
+    <div id="contact" className="p-4 bg-[#202020] text-white">
+      <h1 className="inter text-4xl font-bold text-center md:text-left lg:text-4xl">CONTACT</h1>
+      <div className="flex flex-col items-center sm:flex-row sm:justify-around sm:items-start">
+        <div className="flex flex-col items-center mt-8 ">
+          <div className="p-4 bg-white rounded-[50%]">
+            <img src={mail} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="mail icon" />
+          </div>
+          <h3 className="font-normal text-4xl m-2 sm:text-2xl">Mail</h3>
+          <a className="inter text-2xl text-white underline p-2 hover:line-through sm:text-xl md:text-sm" href="mailto:abbasab13@outlook.com">abbasab13@outlook.com</a>
+        </div>
+        <div className="flex flex-col items-center mt-8 ">
+          <div className="p-4 bg-white rounded-[50%]">
+            <img src={phone} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="phone icon" />
+          </div>
+          <h3 className="font-normal font-light text-4xl m-2 sm:text-2xl">Call</h3>
+          <a className="inter text-2xl text-white underline p-2 hover:line-through sm:text-xl md:text-sm" href="tel:+9613759568">+ 961 3 75 95 65</a>
+        </div>
+        <div className="flex flex-col items-center mt-8 ">
+          <div className="p-4 bg-white rounded-[50%]">
+            <img src={chat} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="chat icon" />
+          </div>
+          <h3 className="font-normal font-light text-4xl m-2 sm:text-2xl">Chat</h3>
+          <a className="inter text-2xl text-white underline p-2 hover:line-through flex items-center gap-x-2 sm:text-xl md:text-sm" href="https://wa.me/9613759568?text=Hey%20what's%20up%20?" target="_blank"><img src={waBIcon} className="w-[15px] h-[15px] sm:w-[20px] sm:h-[20px] lg:w-[30px] lg:h-[30px]" alt='whatsapp business icon' /><span className="inter font-semibold">WhatsApp<span className="inter font-light">Business</span></span></a>
+        </div>
+      </div>
+    </div>
+  )
 };
 
 export default Contact;

@@ -22,6 +22,11 @@ export default {
             }
         },
         {
+            name: 'siteLink',
+            title: 'Site Link',
+            type:'string'
+        },
+        {
             name: 'giturl',
             title: 'GitURL',
             type:'string'

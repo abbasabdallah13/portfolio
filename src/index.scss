@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: FredokaOne;
   src: url("./fonts/FredokaOne-Regular.ttf");
@@ -8,15 +12,30 @@
   src: url("./fonts/Inter-VariableFont_slnt\,wght.ttf");
 }
 
+@font-face {
+  font-family: Coda;
+  src: url("./fonts/Coda-Regular.ttf");
+}
+
 :root {
   --primary-color: #353535;
   --blue-color: #00a0d2;
   --gray-color: #f4f4f4;
 }
+
+.coda{
+  font-family: Coda;
+}
+
+.inter{
+  font-family: Inter !important;
+}
+
 * {
   margin: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  font-family: coda;
 
 }
 html {
@@ -24,6 +43,90 @@ html {
 }
 section {
   height: 100vh;
+}
+
+.whatsapp-business-onhover{
+  position: absolute;
+  top: -2rem;
+  opacity: 0.99;
+}
+
+.pop-in{
+  width: 0;
+  height: 0;
+  @media screen and (max-width: 1023px){
+    width: 6rem;
+    height: 6rem;
+  }
+  @media screen and (min-width: 1024px){
+    &:hover{
+      animation: unset !important;
+      cursor: pointer;
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+@media screen and (min-width:1024px){
+.pop-in0{
+  animation: poppin-animation 1500ms infinite running steps(50);
+  // margin-top: 12rem;
+  // margin-left: 0rem;
+
+
+}
+
+.pop-in1{
+  animation: poppin-animation 2000ms infinite running steps(50);
+  // margin-left: 0rem;
+  
+}
+.pop-in2{
+  animation: poppin-animation 1700ms infinite running steps(50);
+  // margin-top: 12rem;
+  // margin-left: 24rem;
+
+
+}
+.pop-in3{
+  animation: poppin-animation 1600ms infinite running steps(50);
+  // margin-left: 12rem;
+
+}
+.pop-in4{
+  animation: poppin-animation 2400ms infinite running steps(50);
+  // margin-top: 12rem;
+  // margin-left: 36rem;
+
+
+}
+.pop-in5{
+  animation: poppin-animation 2600ms infinite running steps(50);
+  // margin-left: 24rem;
+
+
+}
+.pop-in6{
+  animation: poppin-animation 1800ms infinite running steps(50);
+  // margin-top: 12rem;
+  // margin-left: 48rem;
+
+
+}
+.pop-in7{
+  animation: poppin-animation 2250ms infinite running steps(50);
+  // margin-left: 36rem;
+  
+}
+}
+
+@keyframes poppin-animation {
+  to{
+    width: 5rem;
+    height: 5rem;
+    padding: .4rem;
+  }
 }
 
 

@@ -1,54 +1,47 @@
 import {React, useState, useEffect, useRef} from "react";
+
 import  { client} from '../../client'
+
 import './work.scss'
+
 import CardsComponent from "./CardsComponent";
+
 import { Triangle } from "react-loader-spinner";
+
 import { useInView } from "framer-motion";
+
 const Work = () => {
+  const [allWork, setAllWork] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [work, setWork] = useState([]);
-  const [currentSection, setCurrentSection] = useState('all');
+  const [currentFilter, setCurrentFilter] = useState('show all');
   const [loader, setLoader] = useState(false);
-  const [visibleItems, setVisibleItems] = useState(2);
+  const [visibleItems, setVisibleItems] = useState(4);
   
   
   const ref = useRef(null)
   const isInView = useInView(ref);
   
+  const workCategories = ['show all','reactJS','mongoDB','NodeJS', 'sanity','Next.JS','Redux','GoogleLogin','PayPal','Stripe','Regex','Vite','Motion','tailwindCSS','SASS','ChakraUI','MUI']
   
   useEffect(() => {
+    let skillsQuery, workQuery;
+      workQuery = `*[_type=="work"]`;
+      client.fetch(workQuery).then((data)=>{setAllWork(data); setWork(data); console.log(data)});
+      skillsQuery = `*[_type=="skills"]`;
+      client.fetch(skillsQuery).then((data)=>{setSkills(data); console.log(data)});
+  }, []);
 
-    let query = '';
-    if(currentSection === 'all'){
-      query = `*[_type=="work"]`;
+  useEffect(() => {
+    if(currentFilter === 'show all'){
+      setWork(allWork)
     }else{
-      query = `*[_type=="work" && projectType=='${currentSection}']`;
+      let filteredWork = allWork.filter(el => el.skillsUsed.filter(skill => skill._ref === currentFilter._id).length > 0 && el)
+      setWork(filteredWork);
     }
-    client.fetch(query).then((data)=>{setWork(data); console.log(data)});
+  }, [currentFilter]);
+  
 
-  }, [currentSection]);
-
-  const workCategories = [
-    {
-      title: 'All',
-      sectionVar:'all'
-    },
-    {
-      title: 'Personal',
-      sectionVar: 'personal'
-    },
-    {
-      title: 'Freelance',
-      sectionVar: 'freelance'
-    },
-    {
-      title:'Collaborated',
-      sectionVar: 'collaborated'
-    },
-    {
-      title:'HTML/CSS/JS',
-      sectionVar: 'js'
-    },
-  ]
 
   const Loading = () => {
     setLoader(true);
@@ -60,38 +53,50 @@ const Work = () => {
   }
   
     return (
-    <section className="work-section"  style={{ position:'relative', height:'fit-content'}} id='work'  >
-      <div style={{fontSize:'1.7rem', position:'relative', textAlign:'center', width:'100%', opacity: isInView?'1':0, transition:'1s', transform:!isInView?'translateX(-200px)':'translateX(0)'}} ref={ref}>
-        <h1 style={{fontFamily: 'hepta slab', color:'black'}}>SELECTED WORK</h1>
-      </div>
-        <div style={{backgroundColor:'#00A0D2', padding:'4rem', height:'fit-content'}}>
-   
-        <div style={{display:'flex', border:'1px solid black', width:'fit-content', borderRadius:'2rem', backgroundColor:'whitesmoke', overflow:'hidden', fontFamily:'Hepta Slab'}}>
-          {
-            workCategories.map((el,i) => (
-              <div style={{borderRight:i===el.length-1?'':'1px solid black', padding:'0.5rem', backgroundColor: currentSection===el.sectionVar?'#ffd770':'transparent'}} onClick={()=>{setCurrentSection(el.sectionVar); Loading();}} >{el.title}</div>
-              ))
-          }
+    <div id='work' className="mt-12 h-fit">
+        <h3 className="inter uppercase text-4xl font-bold  text-center w-full lg:text-4xl">selected work</h3>
+        <p className="text-2xl inter lowercase font-medium mt-12 md:text-base ml-12 ">Filter by skill or technology:</p>
+        <div className="flex flex-col items-center mt-2">
+          <div className="w-[90%] md:w-[75%] flex flex-wrap gap-[3px] xl:gap-2">
+            <button 
+                className={`cursor-honeyjar text-md border-solid border-[1px]  ${currentFilter === 'show all' ? 'bg-[#FFD770]' : 'bg-[#EAEAEA] hover:bg-[#9C9B9B] hover:text-white'} px-4 py-[1px] cursor-pointer shadow-filterBtn xl:text-lg`}
+                onClick={()=>setCurrentFilter('show all')}
+            >
+              show all
+            </button>
+            {
+              skills.filter(el => workCategories.includes(el.title) && el).map((el,i) => (
+                  <button 
+                    className={`cursor-honeyjar text-md border-solid border-[1px] ${currentFilter === el ? 'bg-[#FFD770]' : 'bg-[#EAEAEA] hover:bg-[#9C9B9B] hover:text-white'} px-4 py-[1px] cursor-pointer shadow-filterBtn xl:text-lg`}
+                    onClick={()=>setCurrentFilter(el)}
+                    >
+                  {el.title}
+                  </button>
+                ))
+            }
+          </div>
         </div>
-
-        <div className="work-cards-container" style={{justifyContent:loader?'center':'unset', alignItems:loader?'center':'unset'}}>
-          {loader ? (<Triangle color='#ffd770' />) : <CardsComponent visibleItems={visibleItems}  work={work} setWork={setWork} currentSection={currentSection}  /> }         
+        <p className="inter lowercase font-medium text-2xl ml-24 mt-8 md:text-base">showing {work.length} projects</p>
+        <div className="w-full flex justify-center mt-2 mb-2">
+            <div className={`flex justify-center pb-4 h-fit flex-wrap w-[80%] xs:w-[90%] gap-y-8 xs:gap-x-[4%] lg:gap-x-[2.65%] ${loader ? 'justify-center items-center' : ''}`}>
+              {
+                loader ? <Triangle color='#ffd770' /> : <CardsComponent visibleItems={visibleItems} work={work} /> 
+              }         
+            </div>
         </div>
         {
           visibleItems === 0 ? '' : (
-            <div 
-              style={{display: 'flex', justifyContent:'center', width:'100%'}}
-            >
+            <div className="flex justify-center my-6">
               <button 
-                style={{marginTop:'2rem', width: '50%', padding:'1rem', backgroundColor:' black',color:'#00A0d2', fontFamily:'hepta slab', fontSize: '1.5rem', fontWeight: '700', cursor: 'pointer'}}
-                onClick={()=> setVisibleItems(prev =>  prev >= work.length?prev-2:prev + 2)}
-              >{visibleItems>=work.length?'Load Less':'Load More . . .'}
+                className="w-fit inter px-4 text-4xl font-medium  lg:text-xl bg-white text-[#27283D] border-[#27283D] hover:text-white hover:bg-[#27283D] cursor-pointer"
+                onClick={()=> setVisibleItems(prev =>  prev >= work.length ? prev - 4 : prev + 4)}
+              >
+                {visibleItems>=work.length?'Load Less':'Load More . . .'}
               </button>
-           </div>
+            </div>
           )
-        }
-        </div>
-    </section>
+        } 
+    </div>
   )
 };
 
