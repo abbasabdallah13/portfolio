@@ -142,3 +142,23 @@
     right:0px;
   }
 }
+
+
+.navbar {
+  @media screen and (min-width:1024px){    
+    animation: showNavbar 1s
+  }
+}
+
+@keyframes showNavbar {
+  0%{
+    top:-100px
+  }
+  100%{
+    top: 0px
+  }
+}
+
+.navbar.visible {
+  top: 0; /* Show navbar when visible class is applied */
+}

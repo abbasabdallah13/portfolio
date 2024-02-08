@@ -1,0 +1,1 @@
+  export const navlinks = ["home","about", "skills", "work", "testimonials", "contact"];

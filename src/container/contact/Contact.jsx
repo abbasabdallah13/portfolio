@@ -1,5 +1,8 @@
 import React from "react";
 
+import { IoLogoWechat } from "react-icons/io5";
+
+
 import mail from '../../assets/mail.png'
 import phone from '../../assets/phone.png'
 import chat from '../../assets/chat.png'
@@ -7,29 +10,32 @@ import waBIcon from '../../assets/waBusinessIcon.png'
 
 const Contact = () => {
   return (
-    <div id="contact" className="p-4 bg-[#202020] text-white">
-      <h1 className="inter text-4xl font-bold text-center md:text-left lg:text-4xl">CONTACT</h1>
-      <div className="flex flex-col items-center sm:flex-row sm:justify-around sm:items-start">
-        <div className="flex flex-col items-center mt-8 ">
-          <div className="p-4 bg-white rounded-[50%]">
-            <img src={mail} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="mail icon" />
+    <div id="contact" className="bg-[#ffbd59] flex justify-center">
+      <div className="w-4/5 my-4 lg:my-20">
+        <div className="flex flex-col lg:flex-row">
+          <div className="text-[5.5rem] border-b-[15px] border-t-0 border-l-0 border-r-0 border-[#92611e] border-solid lg:w-1/2 flex justify-center items-center">
+            <p className="font-coco-gothic text-[#e4dfd8]">Get in touch</p>
           </div>
-          <h3 className="font-normal text-4xl m-2 sm:text-2xl">Mail</h3>
-          <a className="inter text-2xl text-white underline p-2 hover:line-through sm:text-xl md:text-sm" href="mailto:abbasab13@outlook.com">abbasab13@outlook.com</a>
+          <div className="font-heebo flex justify-center items-center lg:bg-[#92611e] lg:w-1/2 py-8">
+            <p className="text-2xl lg:text-base text-[#92611e] lg:text-[#e4dfd8] font-heebo uppercase">let's make some magic happen together! 🌟</p>
+          </div>
         </div>
-        <div className="flex flex-col items-center mt-8 ">
-          <div className="p-4 bg-white rounded-[50%]">
-            <img src={phone} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="phone icon" />
+        <div className="flex flex-col lg:flex-row lg:justify-between">
+          <div className="flex flex-col items-center lg:w-1/3 mt-2">
+            <p className="text-4xl lg:text-2xl text-[#e4dfd8]">Email</p>
+            <a className="text-3xl lg:text-xl text-black hover:line-through" href="mailto:abbasab13@outlook.com">abbasab13@outlook.com</a>
           </div>
-          <h3 className="font-normal font-light text-4xl m-2 sm:text-2xl">Call</h3>
-          <a className="inter text-2xl text-white underline p-2 hover:line-through sm:text-xl md:text-sm" href="tel:+9613759568">+ 961 3 75 95 65</a>
-        </div>
-        <div className="flex flex-col items-center mt-8 ">
-          <div className="p-4 bg-white rounded-[50%]">
-            <img src={chat} className="w-[40px] h-[35px] xl:w-[60px] xl:h-[50px] 2xl:w-[90px] 2xl:h-[80px]" alt="chat icon" />
+          <div className="flex flex-col items-center lg:w-1/3 mt-6 lg:mt-2">
+            <p className="text-4xl lg:text-2xl text-[#e4dfd8]">Mobile</p>
+            <a className="text-3xl lg:text-xl text-black hover:line-through" href="tel:+9613759568">+961 3 75 95 68</a>
           </div>
-          <h3 className="font-normal font-light text-4xl m-2 sm:text-2xl">Chat</h3>
-          <a className="inter text-2xl text-white underline p-2 hover:line-through flex items-center gap-x-2 sm:text-xl md:text-sm" href="https://wa.me/9613759568?text=Hey%20what's%20up%20?" target="_blank"><img src={waBIcon} className="w-[15px] h-[15px] sm:w-[20px] sm:h-[20px] lg:w-[30px] lg:h-[30px]" alt='whatsapp business icon' /><span className="inter font-semibold">WhatsApp<span className="inter font-light">Business</span></span></a>
+          <div className="flex flex-col items-center lg:w-1/3 mt-6 lg:mt-2">
+            <p className="text-4xl lg:text-2xl text-[#e4dfd8]">Chat</p>
+            <p className="text-3xl lg:text-xl text-black">Want an advise ? Share ideas ? Or just a friendly chat ? I am available 24/7 for chat. Hit me up by clicking the button below.</p>
+            <a href="javascript:void(Tawk_API.toggle())" className="w-full flex justify-center mt-4">
+              <IoLogoWechat className="text-9xl lg:text-7xl text-[#e4dfd8] rounded-full p-4 lg:p-2 bg-[#92611e] hover:bg-[#e4dfd8] hover:text-[#92611e]" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

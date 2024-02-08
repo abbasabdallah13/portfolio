@@ -3,6 +3,11 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        "catchy-mager": "CatchyMager",
+        heebo: "heebo",
+        "coco-gothic": "Coco Gothic"
+      },
       screens: {
         xs: '440px'
       },

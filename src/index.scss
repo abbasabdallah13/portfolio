@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.cdnfonts.com/css/coco-gothic');
+
 @font-face {
   font-family: FredokaOne;
   src: url("./fonts/FredokaOne-Regular.ttf");
@@ -15,6 +17,16 @@
 @font-face {
   font-family: Coda;
   src: url("./fonts/Coda-Regular.ttf");
+}
+
+@font-face {
+  font-family: heebo;
+  src: url("./fonts/Heebo-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: CatchyMager;
+  src: url("./fonts/Catchy\ Mager\ Regular.ttf");
 }
 
 :root {

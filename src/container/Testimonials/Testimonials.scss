@@ -17,7 +17,7 @@
         width: max(14vw,100px);
         height: max(14vw,100px);
         border-radius: 50%;
-        border: 1px #000 solid;
+        border: 2px #92611e solid;
     }
     p{
         font-size: 1.6rem !important;
@@ -37,11 +37,11 @@
     color: #fff;
     font-size: 5rem;
     padding: 0 !important;
-    background-color: #000;
-    border: 1px solid #000;
+    background-color: #92611e;
+    border: 0px solid #000;
     margin: 0 1rem;
     @media (min-width:768px){
-        font-size: 3rem;
+        font-size: 2rem;
     }
     @media (min-width:2000px){
         font-size: 3rem;
@@ -52,11 +52,11 @@
 
 .rec.rec-arrow:hover{
     background-color: #fff !important;
-    border: 1px solid #000;
-    color: #000 !important;
+    border: 1px solid #92611e;
+    color: #92611e !important;
 }
 .rec.rec-arrow:focus{
     background-color: #fff !important;
-    border: 1px solid #000;
-    color: #000 !important;
+    border: 1px solid #92611e;
+    color: #92611e !important;
 }
