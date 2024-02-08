@@ -52,7 +52,7 @@ const CardsComponent = ({work, visibleItems}) => {
               <img className="w-[2.5rem] h-[2.5rem] md:w-[1.8rem] md:h-[1.8rem] lg:w-[.9rem] lg:h-[.9rem]"  src={descriptionIcon} alt='description icon' />
             </motion.button>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mt-4">
               <motion.a 
                 href={el.siteLink}
                 whileHover={{scale: 1.2}}
